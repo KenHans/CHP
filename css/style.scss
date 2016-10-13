@@ -1,0 +1,228 @@
+@import "libs/normalize";
+$backgroundColor: #ededed;
+$spacing: 2rem;
+$links: #35a8ff;
+$brand_main: #005596;
+$brand_sub: #00406b;
+
+$brand_main_light: lighten($brand_main, 10);
+$brand_sub_light: lighten($brand_sub, 10);
+$brand_main_dark: darken($brand_main, 10);
+$brand_sub_dark: darken($brand_sub, 10);
+
+* {
+  box-sizing: border-box;
+}
+html {
+  background: $backgroundColor;
+}
+body {
+  padding: $spacing;
+  background: white;
+  min-height: 500px;
+  position: relative;
+}
+
+a {
+  color: $links;
+  text-decoration: none;
+  &:hover, &:focus {
+    color: darken($links, 25%);
+  }
+}
+// Minor styles  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+H1{
+  color: $brand_main;
+}
+
+.smaller {
+  font-size: 85%;
+  color: #888;
+}
+
+.Fl{
+  float:left;
+}
+.Fr{
+  float:right;
+}
+._30Pcent{
+  width:30%;
+  min-width: 300px;
+}
+._40Pcent{
+  width:40%;
+  min-width: 400px;
+}
+._200{
+  //width:200px;
+}
+.absPos{
+  position: absolute;
+}
+
+// Tabs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.inithide,
+.transformer-tabs .tabs-heading,
+.transformer-tabs select{
+  display:none;
+}
+
+.tabs{
+  .tabItem{
+    display: none;
+    
+    &.active{
+      display: block;
+    }
+  }
+}
+
+.transformer-tabs{
+  ul {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+  }
+  li {
+    float: none;
+    display: inline-block;
+    border: solid 1px #ededed;
+    background-color: #707372;
+    border: solid 1px #bbb;
+    font-size: 24px;
+    border-radius: 2px;
+    width: 29.87%;
+    margin-right: 0;
+    text-align: left;
+    &.active {
+      background-color: #fff;
+      padding: 0 1.125em;
+      border-bottom: 0;
+      border: solid 1px #e3e3e3;
+      a{
+        color: #0077c8;
+        background-color: #fff;
+        border-bottom: solid 2px #0077c8;
+        padding: .88em 1.1em .88em 0;
+        cursor: default;
+      }
+    }
+    a {
+      display: block;
+      color: #fff;
+      font-family: "AllianzSansRegular",Verdana,sans-serif;
+      letter-spacing: -0.02em;
+      padding: .88em 2.2em .88em 1.125em;
+      text-decoration: none;
+    }
+  }
+}
+
+// Data table  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+table.data{
+  th,td{
+    padding:.5em;
+    text-align: left;
+    vertical-align: top;
+    a{
+      min-width: 120px;
+      display: inline-block;
+    }
+  }
+  .notes,.lastedited{
+   // display: none;
+  }
+  .notes{
+    width: 100%;
+    display: block;
+  }
+  .date{
+
+  }
+  .lastedited{
+    
+  }
+}
+
+// forms  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    
+form{
+  &#addNote{
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.9s ease;
+    &.show{
+      max-height: 30em;
+    }
+     
+  }
+  fieldset {
+    border-radius: 10px;
+    border:1px solid $brand_sub_light;
+  }
+  legend {
+    font-size: 1.5em;
+    color:$brand_sub;
+  }
+  label{
+    width:100%;
+    float: left;
+    display: block;
+    margin: 1em 0 .5em;
+  }
+  input,textarea{
+    padding:.5em; 
+    border: 1px solid #ccc;
+    &.error{
+      border: 1px solid #CC0000;
+    }
+  }
+  textarea {
+      width: 100%;
+      height: 7em;
+  }
+  .error {
+    color: red;
+    display: inline-block;
+    width: 100%;
+    font-style: italic;
+    clear: left;
+  }
+
+  input , button{
+    float:left;
+    clear:left;
+    width:100%;
+    
+  } 
+  .checkbox,.radio{
+    input{
+      width: 1.5em;
+      height: 1.5em;
+      margin: 1em 0;
+    }
+  }
+  .inputnumber{
+    input{
+      width: 3.5em;
+    text-align: center;
+      margin: .5em 0 1em 0;
+    }
+  }
+
+  .left {
+    label{   
+    width: auto;
+    margin: 1em 0 1em 1em;
+    }
+  }
+  button.btn{
+    max-width: 350px;
+    font-size: 2em;
+    margin: 1em 0 0em;
+    float:right;
+  }
+  
+}

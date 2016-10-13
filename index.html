@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CHP add note task</title>
+  <link rel="stylesheet" href="css/build/style.css">
+</head>
+<body>
+	<span class="Fr smaller">Currently logged in as <i>Mr Super User</i></span>
+	<h1>CHP add note task</h1>
+	<div class="tabs">
+		<nav role="navigation" class="transformer-tabs" data-mobile-heading="Tab Content">
+		    <ul class="group">
+			    <li class="active"><a href="#home">Home</a></li>
+			    <li class=""><a href="#data">Data</a></li>
+			</ul>
+		</nav>
+		<div class="tabItem active" id="home">
+			<span class="content">
+			<h2>Home</h2>
+			<p>One thing that ALFA does is to capture and display notes against a customer or contract:</p>
+			<ul>
+				<li>Users can write notes and save them.</li>
+				<li>Users can see existing notes, who added them, and when.</li>
+			</ul>
+			 
+			<p>Can you produce an example UI for this? We’d be looking for you to showcase the following skills:</p>
+			<ul>
+				<li>CSS & JavaScript</li>
+				<li>Code structure and readability</li>
+			</ul>
+			<p>Since this is for the front-end engineer role, we specifically will not be looking at design or UX aspects of what you produce.</p>
+			<p>Demonstate JS modular scripting, check for session storage an null items, Sass (nesting & use of variables)</p>
+			</span>
+		</div>
+		<div class="tabItem" id="data">
+			<span class="content">
+			<h2>Data table</h2>
+			 <form id="addNote">
+			     <fieldset>
+			        <legend>Add a note</legend>
+			          <label for="location">Your text</label>
+			          <textarea id="textarea" name="textarea" value"" max-length="250" data-validation="required"></textarea>
+			          <input type="hidden" id="user" name="user" value"" readonly>
+			          <button type="submit" data-confirmtext="Note Updated!" data-origtext="Submit/Close Note" class="btn" >Submit/Close Note</button>
+			    </fieldset>
+			  </form>
+			  <table class="data" id="data_table">
+			    <tr>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Points</th>
+					<th>Points</th>
+					<th>Points</th>
+					<th>Points</th>
+					<th>Points</th>
+					<th>Manage Notes</th>
+					<th>View Notes</th>
+			    </tr>
+			    <tr>
+					<td>Jill</td>
+					<td>Smith</td>
+					<td>50</td>
+					<td>50</td>
+					<td>50</td>
+					<td>50</td>
+					<td>50</td>
+					<td><a href="#">add/edit a note</a></td>
+					<td>
+						<span class="lastedited smaller"></span>
+						<span class="date smaller"></span>
+						<span class="notes"></span>
+					</td>
+				</tr>
+			    <tr>
+					<td>Eve</td>
+					<td>Jackson</td>
+					<td>94</td>
+					<td>94</td>
+					<td>94</td>
+					<td>94</td>
+					<td>94</td>
+					<td><a href="#">add/edit a note</a></td>
+					<td>
+						<span class="lastedited smaller"></span>
+						<span class="date smaller"></span>
+						<span class="notes"></span>
+					</td>
+				</tr>
+			    <tr>
+					<td>Adam</td>
+					<td>Johnson</td>
+					<td>67</td>
+					<td>67</td>
+					<td>67</td>
+					<td>67</td>
+					<td>67</td>
+					<td><a href="#">add/edit a note</a></td>
+					<td>
+						<span class="lastedited smaller"></span>
+						<span class="date smaller"></span>
+						<span class="notes"></span>
+					</td>
+				</tr>
+				<tr>
+					<td>Freddy</td>
+					<td>Mathews</td>
+					<td>67</td>
+					<td>67</td>
+					<td>67</td>
+					<td>67</td>
+					<td>67</td>
+					<td><a href="#">add/edit a note</a></td>
+					<td>
+						<span class="lastedited smaller"></span>
+						<span class="date smaller"></span>
+						<span class="notes"></span>
+					</td>
+				</tr>
+			  </table>
+			</span>
+		</div>
+	</div>
+		
+
+<script src="js/build/production.js"></script>
+<script>document.write('<script src="http://' + (location.host || 
+	'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 
+'script>')</script>
+</body>
+</html>
