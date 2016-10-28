@@ -1,10 +1,4 @@
 /*jshint multistr: true */
-$(document).ready(function(){
-	// call notes function
-	if ($(".data").length) {
-    	Notes.init("data_table");
-  	}
-});
 
 function log(message,txt){
 	var context = "'"+message +"'"+'¬ \n';
@@ -14,7 +8,9 @@ function log(message,txt){
 		console.log(txt); 
 	}
 }
-
+//named for debugging purposes, self invoked, or auto invoked, function
+// creating private functions
+(function selfinvoked(){
 var Notes = {
 	// Create global vars within 'Notes'
 	rowId : "",
@@ -37,6 +33,7 @@ var Notes = {
 	populateNotes: function(tableId){
 		$("#" + tableId + " tr").each(function(){
 			var rowId = $(this).closest("tr").attr("id");
+			// If data is available then populate table notes column 
 			if ((localStorage.getItem(rowId) !== null)&&(localStorage.getItem(rowId) !== "")){
 				$(this).find(".notes").last().text(localStorage.getItem(rowId));
 				$(this).find(".lastedited").text(" last edited by " + localStorage.loggedinuser);
@@ -53,7 +50,7 @@ var Notes = {
 				// open form
 				$("#addNote").addClass("show");			
 				var name = $(this).closest("tr").find("td").first().text();
-				 	//Redefine 'rowID'
+				 	//Redefine global var 'rowID'
 				 	Notes.rowId = $(this).closest("tr").attr("id");
 //log("name + rowId + value", name+Notes.rowId+localStorage.getItem(Notes.rowId));
 					// add name to form legend 
@@ -103,4 +100,6 @@ var Notes = {
 		$("#addNote").removeClass("show");
 		that.text(that.attr("data-origtext"));
 	}
-};	
+};
+Notes.init("data_table");
+}()); 
